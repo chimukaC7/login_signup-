@@ -26,12 +26,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             top: 0,
             right: 0,
             left: 0,
+            //CONTAINER FOR THE IMAGE
             child: Container(
               height: 300,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("images/background.jpg"),
-                      fit: BoxFit.fill)),
+                      fit: BoxFit.fill)
+              ),
+              //OVERLAY OF THE IMAGE
               child: Container(
                 padding: EdgeInsets.only(top: 90, left: 20),
                 color: Color(0xFF3b5999).withOpacity(.85),
@@ -246,6 +249,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
           buildTextField(Icons.account_box_outlined, "User Name", false, false),
           buildTextField(Icons.email_outlined, "email", false, true),
           buildTextField(Icons.lock_outline, "password", true, false),
+          // GENDER
           Padding(
             padding: const EdgeInsets.only(top: 10, left: 10),
             child: Row(
@@ -284,7 +288,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 GestureDetector(
@@ -309,8 +313,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                     ? Palette.textColor1
                                     : Colors.transparent),
                             borderRadius: BorderRadius.circular(15)),
-                        child: Icon(
-                          Icons.account_box_outlined,
+                        child: Icon(MaterialCommunityIcons.account_outline,
                           color: isMale ? Palette.iconColor : Colors.white,
                         ),
                       ),
@@ -324,12 +327,13 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               ],
             ),
           ),
+          //END OF GENDER
           Container(
             width: 200,
             margin: EdgeInsets.only(top: 20),
             child: RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(
+              text: const TextSpan(
                   text: "By pressing 'Submit' you agree to our ",
                   style: TextStyle(color: Palette.textColor2),
                   children: [
@@ -346,16 +350,14 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     );
   }
 
-  TextButton buildTextButton(
-      Icon icon, String title, Color backgroundColor) {
+  TextButton buildTextButton( Icon icon, String title, Color backgroundColor) {
     return TextButton(
       onPressed: () {},
       style: TextButton.styleFrom(
           foregroundColor: Colors.white,
           side: const BorderSide(width: 1, color: Colors.grey),
           minimumSize: const Size(145, 40),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           backgroundColor: backgroundColor),
       child: Row(
         children: [
@@ -382,7 +384,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
         child: Container(
           height: 90,
           width: 90,
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(50),
@@ -409,7 +411,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             blurRadius: 2,
                             offset: Offset(0, 1))
                       ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
                   ),
@@ -432,17 +434,17 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             icon,
             color: Palette.iconColor,
           ),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Palette.textColor1),
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Palette.textColor1),
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          contentPadding: EdgeInsets.all(10),
+          contentPadding: const EdgeInsets.all(10),
           hintText: hintText,
-          hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
+          hintStyle: const TextStyle(fontSize: 14, color: Palette.textColor1),
         ),
       ),
     );
